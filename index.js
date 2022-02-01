@@ -2,6 +2,7 @@
 //LIBRERÍAS
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors');
 const { dbConnection } = require('./database/config');
 
 //CREANDO EL SERVIDOR DE EXPRES
@@ -9,6 +10,9 @@ const app = express();
 
 //BASE DE DATOS
 dbConnection();
+
+// CORS
+app.use(cors());
 
 
 const port = process.env.PORT;
